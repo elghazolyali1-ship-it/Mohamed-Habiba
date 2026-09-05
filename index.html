@@ -315,12 +315,12 @@
             }
             @media screen and (max-width: 639px) {
                 #wg-scroll-hint {
-                    bottom: 45px;
+                    bottom: calc(24px + env(safe-area-inset-bottom, 0px));
                 }
             }
             @media screen and (max-width: 479px) {
                 #wg-scroll-hint {
-                    bottom: 330px;
+                    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
                 }
             }
             #wg-scroll-hint.wg-show {
@@ -335,6 +335,11 @@
                 line-height: 1;
                 color: #c9ad7a;
                 text-shadow: 0 1px 4px rgba(255,250,242,0.9), 0 2px 10px rgba(74,54,36,0.15);
+            }
+            @media screen and (max-width: 479px) {
+                #wg-scroll-hint .wg-scroll-word {
+                    font-size: 26px;
+                }
             }
             #wg-scroll-hint .wg-scroll-circle {
                 width: 22px;
