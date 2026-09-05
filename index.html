@@ -300,28 +300,13 @@
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
             #wg-scroll-hint {
-                position: fixed;
-                left: 50%;
-                bottom: 30px;
-                transform: translateX(-50%);
-                z-index: 998000;
-                display: flex;
+                display: inline-flex;
                 flex-direction: column;
                 align-items: center;
                 gap: 4px;
                 opacity: 0;
                 pointer-events: none;
                 transition: opacity 0.8s ease;
-            }
-            @media screen and (max-width: 639px) {
-                #wg-scroll-hint {
-                    bottom: calc(24px + env(safe-area-inset-bottom, 0px));
-                }
-            }
-            @media screen and (max-width: 479px) {
-                #wg-scroll-hint {
-                    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
-                }
             }
             #wg-scroll-hint.wg-show {
                 opacity: 1;
@@ -362,14 +347,6 @@
                 #wg-scroll-hint .wg-scroll-circle { animation: none; }
             }
         </style>
-        <div id="wg-scroll-hint" aria-hidden="true">
-            <span class="wg-scroll-word">Scroll down</span>
-            <span class="wg-scroll-circle">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 9 L12 16 L19 9" stroke="#c9ad7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </span>
-        </div>
         <script>
             (function() {
                 function waitForEl(selector, cb) {
@@ -1889,6 +1866,17 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 254 1" fill="none" role="img" aria-label="">
                                     <path d="M0 0.5H254" stroke="#666666"></path>
                                 </svg>
+                            </div>
+                        </div>
+                        <!-- Scroll-down hint: sits right above the fountain artwork, below the date -->
+                        <div style="position:absolute; top:440px; left:50%; transform:translateX(-50%); z-index:10; width:300px; text-align:center;">
+                            <div id="wg-scroll-hint" aria-hidden="true">
+                                <span class="wg-scroll-word">Scroll down</span>
+                                <span class="wg-scroll-circle">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 9 L12 16 L19 9" stroke="#c9ad7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
                             </div>
                         </div>
                     </div>
