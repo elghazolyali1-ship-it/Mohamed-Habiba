@@ -268,14 +268,14 @@
                     launchPetals(fx, w, h, 34);
 
                     // Gentle follow-up waves so the flying elements linger nicely
-                    // while the reveal video plays after the invitation opens.
+                    // while the reveal image is shown after the invitation opens.
                     var waveTimers = [];
                     waveTimers.push(setTimeout(function() { launchBirds(fx, w, h, 5, BIRD_SVG_LIGHT); launchPetals(fx, w, h, 14); }, 2600));
                     waveTimers.push(setTimeout(function() { launchBirds(fx, w, h, 4, BIRD_SVG_LIGHT); launchPetals(fx, w, h, 12); }, 5200));
                     waveTimers.push(setTimeout(function() { launchPetals(fx, w, h, 8); }, 7600));
 
                     // Total window the effects layer stays mounted (birds/petals
-                    // keep drifting gracefully over the intro video, then fade out).
+                    // keep drifting gracefully over the intro image, then fade out).
                     setTimeout(function() {
                         fx.classList.remove('wg-active');
                     }, 9500);
@@ -1788,54 +1788,8 @@
                         <div class='t396__elem tn-elem tn-elem__24434337231776948113983' data-elem-id='1776948113983' data-elem-type='html' data-field-top-value="0" data-field-left-value="380" data-field-height-value="782" data-field-width-value="440" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px" data-field-widthmode-value="fixed" data-field-heightmode-value="fixed" data-field-left-res-320-value="-60" data-field-left-res-480-value="20" data-field-left-res-640-value="100" data-field-left-res-960-value="260">
                             <div class='tn-atom tn-atom__html'>
                                 <div style="position: relative; width: 100%;">
-                                    <video id="fadeVideo" muted playsinline loop preload="auto" style="width:100%;height:auto;object-fit:cover;display:block;visibility:hidden;position:absolute;top:0;left:0;">
-                                        <source src="https://pub-4dc8201144ca418fb604349c73e8c724.r2.dev/Animate_still_image_subtle_motion_202605011544%20(1).mp4" type="video/mp4">
-                                    </video>
-                                    <canvas id="fadeCanvas" style="width:100%;display:block;"></canvas>
+                                    <img src="images/hero-invitation.jpg" alt="دعوة زفاف محمد وحبيبة" loading="eager" fetchpriority="high" decoding="async" style="width:100%;height:auto;object-fit:cover;display:block;-webkit-mask-image:linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%);mask-image:linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%);">
                                 </div>
-                                <script>
-                                    (function() {
-                                        var video = document.getElementById('fadeVideo');
-                                        var canvas = document.getElementById('fadeCanvas');
-                                        var ctx = canvas.getContext('2d');
-                                        var drawing = false;
-                                        function startVideo() {
-                                            video.play().catch(function() {});
-                                        }
-                                        video.addEventListener('loadedmetadata', function() {
-                                            canvas.width = video.videoWidth;
-                                            canvas.height = video.videoHeight;
-                                        });
-                                        function drawFrame() {
-                                            if (!video.paused && !video.ended) {
-                                                ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-                                                var gradient = ctx.createLinearGradient(0, canvas.height * 0.8, 0, canvas.height);
-                                                gradient.addColorStop(0, 'rgba(0,0,0,0)');
-                                                gradient.addColorStop(1, 'rgba(0,0,0,1)');
-                                                ctx.globalCompositeOperation = 'destination-out';
-                                                ctx.fillStyle = gradient;
-                                                ctx.fillRect(0, canvas.height * 0.8, canvas.width, canvas.height);
-                                                ctx.globalCompositeOperation = 'source-over';
-                                            }
-                                            requestAnimationFrame(drawFrame);
-                                        }
-                                        video.addEventListener('canplay', function() {
-                                            if (!drawing) {
-                                                drawing = true;
-                                                drawFrame();
-                                            }
-                                            startVideo();
-                                        });
-                                        document.addEventListener('touchstart', function() {
-                                            if (video.paused)
-                                                startVideo();
-                                        }, {
-                                            once: true
-                                        });
-                                        startVideo();
-                                    }
-                                    )();
-                                </script>
                             </div>
                         </div>
                         <div class='t396__elem tn-elem tn-elem__24434337231710510612702' data-elem-id='1710510612702' data-elem-type='vector' data-field-top-value="90" data-field-left-value="93" data-field-width-value="8" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px" data-field-heightmode-value="hug">
@@ -1846,21 +1800,21 @@
                             </div>
                         </div>
                         <div class='t396__elem tn-elem tn-elem__24434337231779566247730000001 t-animate' data-elem-id='1779566247730000001' data-elem-type='text' data-field-top-value="250" data-field-left-value="320" data-field-height-value="100" data-field-width-value="560" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px" data-animate-style="fadeinup" data-animate-duration="2.3" data-animate-delay="3" data-animate-distance="20" data-animate-mobile="y" data-field-textfit-value="autoheight" data-field-fontsize-value="59" data-field-top-res-320-value="250" data-field-left-res-320-value="-118" data-animate-delay-res-320="3" data-field-fontsize-res-320-value="59" data-field-left-res-480-value="-38" data-field-left-res-640-value="42" data-field-left-res-960-value="202">
-                            <div class='tn-atom' field='tn_text_1779566247730000001'>
+                            <!-- <div class='tn-atom' field='tn_text_1779566247730000001'>
                                 Mohamed<br/>
                                 <br/>
                                 <br/>Habiba
-                            </div>
-                        </div>
-                        <div class='t396__elem tn-elem tn-elem__24434337231779566247730000003 t-animate' data-elem-id='1779566247730000003' data-elem-type='text' data-field-top-value="370" data-field-left-value="320" data-field-height-value="37" data-field-width-value="560" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px" data-animate-style="fadeinup" data-animate-duration="2.3" data-animate-delay="3" data-animate-distance="20" data-animate-mobile="y" data-field-textfit-value="fixedsize" data-field-fontsize-value="19" data-field-top-res-320-value="370" data-field-left-res-320-value="-118" data-animate-delay-res-320="3" data-field-left-res-480-value="-40" data-field-left-res-640-value="40" data-field-left-res-960-value="200">
+                            </div> -->
+                        <!-- </div> -->
+                        <!-- <div class='t396__elem tn-elem tn-elem__24434337231779566247730000003 t-animate' data-elem-id='1779566247730000003' data-elem-type='text' data-field-top-value="370" data-field-left-value="320" data-field-height-value="37" data-field-width-value="560" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px" data-animate-style="fadeinup" data-animate-duration="2.3" data-animate-delay="3" data-animate-distance="20" data-animate-mobile="y" data-field-textfit-value="fixedsize" data-field-fontsize-value="19" data-field-top-res-320-value="370" data-field-left-res-320-value="-118" data-animate-delay-res-320="3" data-field-left-res-480-value="-40" data-field-left-res-640-value="40" data-field-left-res-960-value="200">
                             <div class='tn-atom' field='tn_text_1779566247730000003'>12.09.2026</div>
-                        </div>
+                        </div> -->
                         <!-- <div class='t396__elem tn-elem tn-elem__24434337231779626065755000001 t-animate' data-elem-id='1779626065755000001' data-elem-type='text' data-field-top-value="491" data-field-left-value="320" data-field-height-value="37" data-field-width-value="560" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px" data-animate-style="fadeinup" data-animate-duration="2.3" data-animate-delay="3" data-animate-distance="20" data-animate-mobile="y" data-field-textfit-value="fixedsize" data-field-fontsize-value="19" data-field-top-res-320-value="487" data-field-left-res-320-value="-118" data-animate-delay-res-320="3" data-field-left-res-480-value="-40" data-field-left-res-640-value="40" data-field-left-res-960-value="200">
                             <div class='tn-atom' field='tn_text_1779626065755000001'>à partir de 16h</div>
                         </div> -->
-                        <div class='t396__elem tn-elem tn-elem__24434337231779566247730000004 t-animate' data-elem-id='1779566247730000004' data-elem-type='text' data-field-top-value="280" data-field-left-value="573" data-field-height-value="31" data-field-width-value="55" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px" data-animate-style="fadeinup" data-animate-duration="2.3" data-animate-delay="3" data-animate-distance="20" data-animate-mobile="y" data-field-textfit-value="autoheight" data-field-fontsize-value="28" data-field-top-res-320-value="280" data-field-left-res-320-value="134" data-animate-delay-res-320="3" data-field-left-res-480-value="214" data-field-left-res-640-value="294" data-field-left-res-960-value="454">
+                        <!-- <div class='t396__elem tn-elem tn-elem__24434337231779566247730000004 t-animate' data-elem-id='1779566247730000004' data-elem-type='text' data-field-top-value="280" data-field-left-value="573" data-field-height-value="31" data-field-width-value="55" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px" data-animate-style="fadeinup" data-animate-duration="2.3" data-animate-delay="3" data-animate-distance="20" data-animate-mobile="y" data-field-textfit-value="autoheight" data-field-fontsize-value="28" data-field-top-res-320-value="280" data-field-left-res-320-value="134" data-animate-delay-res-320="3" data-field-left-res-480-value="214" data-field-left-res-640-value="294" data-field-left-res-960-value="454">
                             <div class='tn-atom' field='tn_text_1779566247730000004'>&amp;</div>
-                        </div>
+                        </div> -->
                         <div class='t396__elem tn-elem tn-elem__24434337231730310670421' data-elem-id='1730310670421' data-elem-type='vector' data-field-top-value="90" data-field-left-value="93" data-field-width-value="8" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px" data-field-heightmode-value="hug">
                             <div class='tn-atom tn-atom__vector'>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 254 1" fill="none" role="img" aria-label="">
@@ -1871,12 +1825,12 @@
                         <!-- Scroll-down hint: sits right above the fountain artwork, below the date -->
                         <div style="position:absolute; top:440px; left:50%; transform:translateX(-50%); z-index:10; width:300px; text-align:center;">
                             <div id="wg-scroll-hint" aria-hidden="true">
-                                <span class="wg-scroll-word">Scroll down</span>
+                                <!-- <span class="wg-scroll-word">Scroll down</span>
                                 <span class="wg-scroll-circle">
                                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M5 9 L12 16 L19 9" stroke="#c9ad7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
-                                </span>
+                                </span> -->
                             </div>
                         </div>
                     </div>
@@ -2418,25 +2372,14 @@
                         }
                     </style>
                     <div class="wg-frame-verse">
-                        <img class="wg-frame-img" src="https://static.tildacdn.net/tild6634-6438-4366-b831-343330323762/frsame_1.png" alt=""/>
-                        <div class="wg-frame-verse-text">
-                            <p class="wg-frame-verse-bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-                            <p class="wg-frame-verse-arabic">
-                                وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ
-                            </p>
-                            <div class="wg-frame-verse-rule"></div>
-                            <p class="wg-frame-verse-en">
-                                "And among His signs is that He created for you mates from among yourselves, that you may find tranquility in them, and He placed between you affection and mercy. Indeed in that are signs for a people who reflect."
-                            </p>
-                            <div class="wg-frame-verse-cite">Surah Ar-Rum — 30:21</div>
-                        </div>
+                     
                     </div>
                 </div>
                 <!-- /T396 -->
             </div>
 
             <div id="rec2443433753" class="r t-rec t-rec_pt_15" style="padding-top:15px;background-color:#f9e6d4; " data-animationappear="off" data-record-type="396" data-bg-color="#f9e6d4">
-                <!-- T396 -->
+              
                 <style>
                     #rec2443433753 .t396__artboard {
                         height: 340px;
